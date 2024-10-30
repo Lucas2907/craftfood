@@ -12,7 +12,7 @@ export default function Populares(){
                 <img src="second_populares.png" alt="" className="populares__cards_title_img" />
                 <h3 className="populares__cards_item_title">Ramen apimentado</h3>
                 <p className="populares__cards_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p className="populares__cards_item_preco">R$ 30</p>
+                <p className="populares__cards_item_preco">R$ 50</p>
             </li>
             <li className="populares__cards_item">
                 <img src="three_populares.png" alt="" className="populares__cards_title_img" />
