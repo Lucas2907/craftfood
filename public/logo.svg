@@ -1,0 +1,11 @@
+<svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      fill: #4CAF50; /* cor verde para representar alimentos frescos */
+    }
+  </style>
+  <text x="10" y="30" class="text">FoodCraft</text>
+</svg>
