@@ -9,7 +9,7 @@ export default function Comentarios() {
     userName: '',
     imagemUrl: '',
     estrelas: 3,
-    comentarioTexto: ''
+    comentario: ''
   });
 
   // Configuração do Appwrite Client
@@ -51,12 +51,12 @@ export default function Comentarios() {
           userName: formData.userName,
           imagemUrl: formData.imagemUrl,
           estrelas: parseInt(formData.estrelas),
-          comentarioTexto: formData.comentarioTexto
+          comentario: formData.comentario
         }
       );
       console.log("Documento criado:", response); // Verifique a resposta
       setComentarios([...comentarios, response]); // Adiciona o novo comentário ao estado
-      setFormData({ userName: '', imagemUrl: '', estrelas: 3, comentarioTexto: '' });
+      setFormData({ userName: '', imagemUrl: '', estrelas: 3, comentario: '' });
       setShowForm(false);
     } catch (error) {
       console.error("Erro ao enviar comentário:", error.message); // Exibe o erro detalhado
@@ -84,7 +84,7 @@ export default function Comentarios() {
             <img src={comentario.imagemUrl} alt={`${comentario.userName}'s imagemUrl`} />
             <h3>{comentario.userName}</h3>
             <p>{'⭐'.repeat(comentario.estrelas)}</p>
-            <p>{comentario.comentarioTexto}</p>
+            <p>{comentario.comentario}</p>
           </div>
         ))}
       </div>
