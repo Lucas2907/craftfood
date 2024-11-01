@@ -3,4 +3,33 @@
     justify-content: space-between;
     width: 70%;
     margin: 0 auto;
+    margin-top: 38px;
+}
+
+.navigation__image {
+    width: 100%;
+    max-width: 154px;
+    max-height: 41px;
+}
+
+.navigation__menu {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 56px;
+    margin: 0;
+}
+
+.navigation__menu_item {
+    height: 30px ;
+}
+
+.navigation__menu_item a {
+    text-decoration: none;
+}
+
+.navigation__btn {
+    width: 100%;
+    max-width: 207px;
+    height: 54px;
 }
