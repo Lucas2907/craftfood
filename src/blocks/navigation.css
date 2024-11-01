@@ -6,6 +6,7 @@
   margin-top: 38px;
   font-family: "Poppins", sans-serif;
   align-items: center;
+  color: #232323;
 }
 
 .navigation__image {
@@ -32,14 +33,13 @@
 
 .navigation__menu_item a {
   text-decoration: none;
-  color: #000000;
+  color: #232323;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.25;
   height: 30px;
   display: flex;
   align-items: center;
-
 }
 
 .navigation__btn {
@@ -56,5 +56,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }

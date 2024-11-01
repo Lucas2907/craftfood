@@ -1,6 +1,7 @@
 @import url(../vendor/normalize.css);
 @import url(../blocks/navigation.css);
 @import url(../blocks/header.css);
+@import url(../blocks/hero.css);
 
 .page {
   display: flex;
