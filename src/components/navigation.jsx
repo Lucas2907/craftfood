@@ -9,7 +9,7 @@ export default function Navigation(){
                 <li className="navigation__menu_item"><Link href={"#"}>Sobre Nós</Link></li>
                 <li className="navigation__menu_item"><Link href={"#"}>Populares</Link></li>
             </ul>
-            <button className="navigation__btn"><Link href="#" className="navigation__link">Reserve já</Link></button>
+            <Link href="#" className="navigation__btn navigation__link">Reserve já</Link>
         </nav>
     )
 }
