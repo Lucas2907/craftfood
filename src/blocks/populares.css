@@ -1,0 +1,72 @@
+.populares {
+  width: 70%;
+  font-family: "Koh Santepheap", sans-serif;
+  font-weight: 400;
+  color: #232323;
+  display: flex;
+  flex-direction: column;
+}
+
+.populares__title {
+  margin: 0 0 170px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.populares__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 0;
+  gap: 32px;
+  margin: 0 0 120px;
+}
+
+.populares__cards_item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f5f2;
+  border-radius: 16px;
+}
+
+.populares__cards_title_img {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  top: -80px;
+}
+.populares__cards_item_title {
+  width: 100%;
+  max-width: 299px;
+  margin: 0 0 24px;
+  font-size: 3.2rem;
+  line-height: 1.26;
+  font-weight: 400;
+  text-align: center;
+}
+.populares__cards_item_text {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 0 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.populares__cards_item_preco {
+  width: 100%;
+  max-width: 84px;
+  margin: 0;
+  padding-bottom: 24px;
+  color: #ff0000;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1.26;
+}
