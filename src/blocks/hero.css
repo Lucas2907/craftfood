@@ -1,13 +1,18 @@
 .hero {
   width: 70%;
   display: flex;
-  margin: 120px 0 ;
+  margin: 120px 0;
+  justify-content: space-between;
 }
 
 .hero__img {
   width: 100%;
   max-width: 592px;
-  margin-right: 104px;
+  transition: ease-in-out 0.5s;
+}
+
+.hero__img:hover {
+  transform: scale(1.09);
 }
 
 .hero__container {

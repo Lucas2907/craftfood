@@ -9,9 +9,7 @@ export default function Header() {
           A culinária Japonesa é bastante equilibrada, sendo muito rica em
           peixes (ômega 3), vegetais, massas e ingredientes frescos.
         </h2>
-        <Link href="/cardapio">
-          <button className="header__button">Ver o Cardápio</button>
-        </Link>
+        <button className="header__button">Ver o Cardápio</button>
       </div>
       <img
         className="header__image"

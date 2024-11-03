@@ -26,6 +26,7 @@
   height: 30px;
 }
 
+
 .navigation__menu_item {
   display: flex;
   align-items: center;
@@ -40,6 +41,12 @@
   height: 30px;
   display: flex;
   align-items: center;
+  transition: ease-in-out 0.2s;
+}
+
+.navigation__menu_item a:hover{
+  color: #ff0000;
+  transform: scale(1.1);
 }
 
 .navigation__btn {
@@ -56,4 +63,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease-in-out 0.3s;
+}
+
+.navigation__btn:hover {
+  transform: scale(1.1);
 }

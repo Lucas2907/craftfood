@@ -3,6 +3,9 @@
 @import url(../blocks/header.css);
 @import url(../blocks/hero.css);
 @import url(../blocks/populares.css);
+@import url(../blocks/comentarios.css);
+@import url(../blocks/forms.css);
+
 
 .page {
   display: flex;

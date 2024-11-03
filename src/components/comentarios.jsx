@@ -8,7 +8,7 @@ export default function Comentarios() {
   const [formData, setFormData] = useState({
     userName: "",
     imagemUrl: "",
-    estrelas: 3,
+    estrelas: "",
     comentario: "",
   });
 
@@ -77,24 +77,27 @@ export default function Comentarios() {
       </button>
 
       {showForm && (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <input
+            className="form__text form__element"
             type="text"
             name="userName"
-            placeholder="userName"
+            placeholder="Username"
             value={formData.userName}
             onChange={handleChange}
             required
           />
           <input
+            className="form__image form__element"
             type="url"
             name="imagemUrl"
-            placeholder="URL da imagemUrl"
+            placeholder="URL da imagem"
             value={formData.imagemUrl}
             onChange={handleChange}
             required
           />
           <input
+            className="form__number-stars form__element"
             type="number"
             name="estrelas"
             placeholder="Estrelas (1 a 5)"
@@ -104,31 +107,35 @@ export default function Comentarios() {
             onChange={handleChange}
             required
           />
-          <textarea
+          <input
+            type="text"
+            className="form__coments form__element"
             name="comentario"
             placeholder="Comentário"
             value={formData.comentario}
             onChange={handleChange}
             required
           />
-          <button type="submit">Enviar</button>
+          <button className="form__submit" type="submit">
+            Enviar
+          </button>
         </form>
       )}
 
       <div className="comentarios-list">
         {comentarios.map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
+            <h3 className="comentario__name">{comentario.userName}</h3>
+            <p className="comentario__stars">
+              {"⭐".repeat(comentario.estrelas)}
+            </p>
+            <p className="comentario__text">{comentario.comentario}</p>
             <img
               className="comentario__images"
               src={comentario.imagemUrl}
               crossOrigin="anonymous"
               alt={`${comentario.userName}'s imagemUrl`}
             />
-            <h3 className="comentario__name">{comentario.userName}</h3>
-            <p className="comentario__stars">
-              {"⭐".repeat(comentario.estrelas)}
-            </p>
-            <p className="comentario__text">{comentario.comentario}</p>
           </div>
         ))}
       </div>
