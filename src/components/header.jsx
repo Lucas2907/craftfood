@@ -16,6 +16,7 @@ export default function Header() {
       <img
         className="header__image"
         src="./sushi__header.png"
+        crossOrigin="anonymous"
         alt="sushi feito poelos melhores do mundo"
       />
     </header>

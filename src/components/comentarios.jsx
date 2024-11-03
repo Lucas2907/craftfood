@@ -81,7 +81,7 @@ export default function Comentarios() {
       <div className="comentarios-list">
         {comentarios.map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
-            <img src={comentario.imagemUrl} alt={`${comentario.userName}'s imagemUrl`} />
+            <img src={comentario.imagemUrl} crossOrigin="anonymous" alt={`${comentario.userName}'s imagemUrl`} />
             <h3>{comentario.userName}</h3>
             <p>{'⭐'.repeat(comentario.estrelas)}</p>
             <p>{comentario.comentario}</p>

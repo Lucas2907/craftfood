@@ -1,7 +1,7 @@
 export default function Hero(){
     return(
         <section className="hero">
-            <img src="./hero__img.png" alt="" className="hero__img" />
+            <img src="./hero__img.png" crossOrigin="anonymous" alt="" className="hero__img" />
             <div className="hero__container">
                 <h3 className="hero__title">Sobre nós</h3>
                 <h2 className="hero__subtitle">Feita de forma
