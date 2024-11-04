@@ -31,39 +31,47 @@
 }
 
 .comentarios-list {
-  margin: 70px 0 120px;
+  margin: 100px 0 120px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
-  gap: 30px 30px;
+  gap: 100px 30px;
 }
 
 .comentario-card {
   width: 100%;
-  max-width: 592px;
-  height: auto;
+  max-width: 300px;
   max-height: 390px;
-  background-color: #f8f5f2;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+.comentario__images {
+  position: relative;
+  top: -80px;
+  width: 80%;
+  border-radius: 200px;
+  max-width: 300px;
+  transition: ease-in-out 0.2s;
+}
+
+.comentario__images:hover {
+  transform: scale(1.1);
 }
 
 .comentario__name {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  margin: 10px 0 10px;
+  margin: 0 0 10px;
   font-size: 2.5rem;
   line-height: 1.2;
-}
-
-.comentario__stars {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  position: relative;
+  top: -40px;
 }
 
 .comentario__text {
@@ -71,9 +79,14 @@
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
   text-align: center;
+  width: 70%;
+  max-width: 300px;
+  overflow-wrap: break-word;
 }
 
-.comentario__images {
-  width: 80%;
-  border-radius: 16px;
+.comentario__stars {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  
 }
