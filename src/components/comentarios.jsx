@@ -116,6 +116,7 @@ export default function Comentarios() {
             value={formData.comentario}
             onChange={handleChange}
             required
+            maxlength="48"
           />
           <button className="form__submit" type="submit">
             Enviar
@@ -126,17 +127,17 @@ export default function Comentarios() {
       <div className="comentarios-list">
         {comentarios.map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
-            <h3 className="comentario__name">{comentario.userName}</h3>
-            <p className="comentario__stars">
-              {"⭐".repeat(comentario.estrelas)}
-            </p>
-            <p className="comentario__text">{comentario.comentario}</p>
             <img
               className="comentario__images"
               src={comentario.imagemUrl}
               crossOrigin="anonymous"
               alt={`${comentario.userName}'s imagemUrl`}
             />
+            <h3 className="comentario__name">{comentario.userName}</h3>
+            <p className="comentario__text">{comentario.comentario}</p>
+            <p className="comentario__stars">
+              {"⭐".repeat(comentario.estrelas)}
+            </p>
           </div>
         ))}
       </div>
