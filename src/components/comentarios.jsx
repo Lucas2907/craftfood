@@ -11,6 +11,7 @@ export default function Comentarios() {
     estrelas: "",
     comentario: "",
   });
+  const [currentIndex, setCurrentIndex] = useState(0); // Index para paginação
 
   // Configuração do Appwrite Client
   const client = new Client()
@@ -57,12 +58,27 @@ export default function Comentarios() {
           comentario: formData.comentario,
         }
       );
-      console.log("Documento criado:", response); // Verifique a resposta
-      setComentarios([...comentarios, response]); // Adiciona o novo comentário ao estado
+      console.log("Documento criado:", response);
+      setComentarios([...comentarios, response]);
       setFormData({ userName: "", imagemUrl: "", estrelas: 3, comentario: "" });
       setShowForm(false);
     } catch (error) {
-      console.error("Erro ao enviar comentário:", error.message); // Exibe o erro detalhado
+      console.error("Erro ao enviar comentário:", error.message);
+    }
+  };
+
+  // Lógica de paginação
+  const comentariosPorPagina = 4;
+  const comentariosExibidos = comentarios.slice(
+    currentIndex,
+    currentIndex + comentariosPorPagina
+  );
+
+  const handleVerMais = () => {
+    if (currentIndex + comentariosPorPagina >= comentarios.length) {
+      setCurrentIndex(0); // Reinicia ao primeiro comentário
+    } else {
+      setCurrentIndex(currentIndex + comentariosPorPagina); // Avança para a próxima página
     }
   };
 
@@ -116,7 +132,6 @@ export default function Comentarios() {
             value={formData.comentario}
             onChange={handleChange}
             required
-            maxlength="48"
           />
           <button className="form__submit" type="submit">
             Enviar
@@ -125,7 +140,7 @@ export default function Comentarios() {
       )}
 
       <div className="comentarios-list">
-        {comentarios.map((comentario) => (
+        {comentariosExibidos.map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
             <img
               className="comentario__images"
@@ -141,6 +156,12 @@ export default function Comentarios() {
           </div>
         ))}
       </div>
+      
+      {comentarios.length > comentariosPorPagina && (
+        <button className="comentario__ver-mais" onClick={handleVerMais}>
+          Ver Mais
+        </button>
+      )}
     </div>
   );
 }
