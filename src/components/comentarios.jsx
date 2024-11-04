@@ -112,6 +112,7 @@ export default function Comentarios() {
             className="form__coments form__element"
             name="comentario"
             placeholder="Comentário"
+            maxLength={50}
             value={formData.comentario}
             onChange={handleChange}
             required
