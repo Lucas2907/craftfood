@@ -22,7 +22,7 @@ export default function Comentarios() {
   const storage = new Storage(client);
   const COLLECTION_ID = process.env.NEXT_PUBLIC_COLLECTION_ID;
   const DATABASE_ID = process.env.NEXT_PUBLIC_DATABASE_ID;
-  const BUCKET_ID = process.env.NEXT_PUBLIC_BUNKER_ID; // ID do seu bucket
+  const BUCKET_ID = process.env.NEXT_PUBLIC_BUNKER_ID;
 
   // Carregar os comentários do banco de dados
   useEffect(() => {
@@ -38,7 +38,12 @@ export default function Comentarios() {
       }
     };
 
+    // Chamada inicial e configuração do intervalo
     fetchComentarios();
+    const intervalId = setInterval(fetchComentarios, 5000); // Atualiza a cada 5 segundos
+
+    // Limpeza do intervalo quando o componente é desmontado
+    return () => clearInterval(intervalId);
   }, [databases, DATABASE_ID, COLLECTION_ID]);
 
   // Manipular mudanças no formulário
@@ -61,30 +66,28 @@ export default function Comentarios() {
     }
 
     try {
-      // Upload da imagem para o bucket
       const fileResponse = await storage.createFile(
         BUCKET_ID,
         ID.unique(),
         formData.imagem,
-        [Permission.read(Role.any())] // Permissão de leitura pública
+        [Permission.read(Role.any())]
       );
 
-      // Criação do documento com a URL da imagem
       const response = await databases.createDocument(
         DATABASE_ID,
         COLLECTION_ID,
         ID.unique(),
         {
           userName: formData.userName,
-          imagemUrl: getImageUrl(fileResponse.$id), // Salva a URL da imagem
+          imagemUrl: getImageUrl(fileResponse.$id),
           estrelas: parseInt(formData.estrelas),
           comentario: formData.comentario,
         },
-        [Permission.read(Role.any())] // Permissão de leitura pública para o documento
+        [Permission.read(Role.any())]
       );
 
       console.log("Documento criado:", response);
-      setComentarios((prev) => [...prev, response]); // Adiciona o novo comentário
+      setComentarios((prev) => [...prev, response]);
       setFormData({ userName: "", imagem: null, estrelas: 3, comentario: "" });
       setShowForm(false);
     } catch (error) {
@@ -157,12 +160,13 @@ export default function Comentarios() {
         {comentarios.slice(startIndex, startIndex + 4).map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
             <img
+            crossOrigin="anonymous"
               className="comentario__images"
               src={comentario.imagemUrl}
               alt={`${comentario.userName}'s imagem`}
               onError={(e) => {
                 console.error("Falha ao carregar imagem:", e);
-                e.target.src = "/fallback-image.png"; // Exibe uma imagem de fallback
+                e.target.src = "/fallback-image.png";
               }}
             />
             <h3 className="comentario__name">{comentario.userName}</h3>
@@ -173,7 +177,7 @@ export default function Comentarios() {
           </div>
         ))}
       </div>
-      
+
       {startIndex + 4 < comentarios.length && (
         <button onClick={handleSeeMore}>Ver mais</button>
       )}
