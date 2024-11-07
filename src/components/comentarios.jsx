@@ -49,7 +49,7 @@ export default function Comentarios() {
   // Manipular mudanças no formulário
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-    setFormData({ ...formData, [name]: type === 'file' ? files[0] : value });
+    setFormData({ ...formData, [name]: type === "file" ? files[0] : value });
   };
 
   // Função para obter a URL completa do arquivo
@@ -160,7 +160,7 @@ export default function Comentarios() {
         {comentarios.slice(startIndex, startIndex + 4).map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
             <img
-            crossOrigin="anonymous"
+              crossOrigin="anonymous"
               className="comentario__images"
               src={comentario.imagemUrl}
               alt={`${comentario.userName}'s imagem`}
