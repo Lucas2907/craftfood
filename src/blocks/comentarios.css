@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   font-family: "Koh Santepheap", sans-serif;
+  color: #232323;
 }
 
 .comentario__title {
@@ -28,20 +29,27 @@
 
 .comentario__button:hover {
   transform: scale(1.1);
+  color: #ff0000;
+  background-color: #f2f2f2;
+}
+
+.comentario__button:active {
+  transition-duration: 0ms;
+  color: #870202;
 }
 
 .comentarios-list {
-  margin: 100px 0 120px;
+  margin: 100px 0 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
-  gap: 100px 30px;
+  gap: 0 30px;
 }
 
 .comentario-card {
   width: 100%;
   max-width: 300px;
-  max-height: 390px;
+  min-height: 430px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -56,8 +64,10 @@
   top: -80px;
   width: 80%;
   border-radius: 200px;
-  max-width: 300px;
+  width: 148px;
+  height: 148px;
   transition: ease-in-out 0.2s;
+  object-fit: cover;
 }
 
 .comentario__images:hover {
@@ -88,5 +98,29 @@
   margin: 0;
   font-size: 2rem;
   line-height: 1.2;
-  
+}
+
+.comentario__ver-mais {
+  padding: 10px 0;
+  margin-bottom: 120px;
+  width: 100%;
+  max-width: 150px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.comentario__ver-mais:hover {
+  transform: scale(1.1);
+  color: #ff0000;
+  background-color: #f2f2f2;
+}
+
+.comentario__ver-mais:active {
+  transition-duration: 0ms;
+  color: #870202;
 }
