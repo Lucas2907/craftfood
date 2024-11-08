@@ -179,7 +179,9 @@ export default function Comentarios() {
       </div>
 
       {startIndex + 4 < comentarios.length && (
-        <button onClick={handleSeeMore}>Ver mais</button>
+        <button className="comentario__button" onClick={handleSeeMore}>
+          Ver mais
+        </button>
       )}
     </div>
   );

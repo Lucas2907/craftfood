@@ -8,19 +8,24 @@
   align-items: center;
 }
 
+.form__image {
+  margin: auto;
+}
+
 .form__element {
   display: flex;
   width: 90%;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   border: 2px solid #7d7d7d;
   background-color: #f1efef;
-  padding: 5px 20px 0;
+  padding: 5px 20px;
   box-sizing: border-box;
   margin: 0;
   font-size: medium;
   color: #000000;
   font-family: "Poppins", sans-serif;
+  justify-content: center;
 }
 
 .form__element::placeholder {
@@ -43,6 +48,6 @@
 }
 
 .form__submit:hover {
-    opacity: 70%;
-    transform: scale(1.08);
+  opacity: 70%;
+  transform: scale(1.08);
 }

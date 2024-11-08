@@ -48,8 +48,8 @@
 
 .comentario-card {
   width: 100%;
-  max-width: 300px;
-  min-height: 430px;
+  width: 300px;
+  height: 430px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
