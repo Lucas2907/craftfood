@@ -22,7 +22,7 @@ export default function Comentarios() {
   const storage = new Storage(client);
   const COLLECTION_ID = process.env.NEXT_PUBLIC_COLLECTION_ID;
   const DATABASE_ID = process.env.NEXT_PUBLIC_DATABASE_ID;
-  const BUCKET_ID = process.env.NEXT_PUBLIC_BUNKER_ID;
+  const BUCKET_ID = process.env.NEXT_PUBLIC_BUCKET_ID;
 
   // Carregar os comentários do banco de dados
   useEffect(() => {
@@ -97,7 +97,11 @@ export default function Comentarios() {
 
   // Função para ver mais comentários
   const handleSeeMore = () => {
-    setStartIndex((prevIndex) => prevIndex + 4);
+    if (startIndex + 4 < comentarios.length) {
+      setStartIndex((prevIndex) => prevIndex + 4);
+    } else {
+      setStartIndex(0); // Voltar para o início se não houver mais páginas
+    }
   };
 
   return (
@@ -178,11 +182,9 @@ export default function Comentarios() {
         ))}
       </div>
 
-      {startIndex + 4 < comentarios.length && (
-        <button className="comentario__button" onClick={handleSeeMore}>
-          Ver mais
-        </button>
-      )}
+      <button className="comentario__button" onClick={handleSeeMore}>
+        {startIndex + 4 < comentarios.length ? "Ver mais" : "Voltar ao início"}
+      </button>
     </div>
   );
 }
