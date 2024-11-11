@@ -76,3 +76,14 @@
   font-size: 3.2rem;
   line-height: 1.26;
 }
+
+@media screen and (min-width: 1280px) and (max-width: 1920px) { 
+
+  .populares__cards_title_img {
+    max-width: 230px;
+  }
+
+  .populares__cards_item_title {
+    font-size: 2.9rem;
+  }
+}

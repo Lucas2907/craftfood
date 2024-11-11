@@ -95,12 +95,14 @@ export default function Footer() {
       </div>
       <div className="footer__divider"> </div>
       <div className="footer__rodape">
-        <img
-          src="./logo.svg"
-          crossOrigin="anonymous"
-          alt=""
-          className="footer__image_logo"
-        />
+        <Link href={"#"}>
+          <img
+            src="./logo.svg"
+            crossOrigin="anonymous"
+            alt="imagem do logo do estabelecimento foodjp"
+            className="footer__image_logo"
+          />
+        </Link>
         <div className="footer__social">
           <Link href={"#"}>
             <img
