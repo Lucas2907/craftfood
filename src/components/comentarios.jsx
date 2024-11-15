@@ -13,7 +13,6 @@ export default function Comentarios() {
   });
   const [startIndex, setStartIndex] = useState(0);
 
-  // Configuração do Appwrite Client
   const client = new Client()
     .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
@@ -24,7 +23,6 @@ export default function Comentarios() {
   const DATABASE_ID = process.env.NEXT_PUBLIC_DATABASE_ID;
   const BUCKET_ID = process.env.NEXT_PUBLIC_BUCKET_ID;
 
-  // Carregar os comentários do banco de dados
   useEffect(() => {
     const fetchComentarios = async () => {
       try {
@@ -38,26 +36,21 @@ export default function Comentarios() {
       }
     };
 
-    // Chamada inicial e configuração do intervalo
     fetchComentarios();
-    const intervalId = setInterval(fetchComentarios, 5000); // Atualiza a cada 5 segundos
+    const intervalId = setInterval(fetchComentarios, 5000);
 
-    // Limpeza do intervalo quando o componente é desmontado
     return () => clearInterval(intervalId);
   }, [databases, DATABASE_ID, COLLECTION_ID]);
 
-  // Manipular mudanças no formulário
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     setFormData({ ...formData, [name]: type === "file" ? files[0] : value });
   };
 
-  // Função para obter a URL completa do arquivo
   const getImageUrl = (fileId) => {
     return `https://cloud.appwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${fileId}/view?project=${process.env.NEXT_PUBLIC_PROJECT_ID}`;
   };
 
-  // Enviar dados para o banco de dados
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.imagem) {
@@ -86,7 +79,6 @@ export default function Comentarios() {
         [Permission.read(Role.any())]
       );
 
-      console.log("Documento criado:", response);
       setComentarios((prev) => [...prev, response]);
       setFormData({ userName: "", imagem: null, estrelas: 3, comentario: "" });
       setShowForm(false);
@@ -95,12 +87,11 @@ export default function Comentarios() {
     }
   };
 
-  // Função para ver mais comentários
   const handleSeeMore = () => {
-    if (startIndex + 4 < comentarios.length) {
-      setStartIndex((prevIndex) => prevIndex + 4);
+    if (startIndex + 6 < comentarios.length) {
+      setStartIndex((prevIndex) => prevIndex + 6);
     } else {
-      setStartIndex(0); // Voltar para o início se não houver mais páginas
+      setStartIndex(0);
     }
   };
 
@@ -161,7 +152,7 @@ export default function Comentarios() {
       )}
 
       <div className="comentarios-list">
-        {comentarios.slice(startIndex, startIndex + 4).map((comentario) => (
+        {comentarios.slice(startIndex, startIndex + 6).map((comentario) => (
           <div key={comentario.$id} className="comentario-card">
             <img
               crossOrigin="anonymous"
@@ -169,7 +160,6 @@ export default function Comentarios() {
               src={comentario.imagemUrl}
               alt={`${comentario.userName}'s imagem`}
               onError={(e) => {
-                console.error("Falha ao carregar imagem:", e);
                 e.target.src = "/fallback-image.png";
               }}
             />
@@ -183,7 +173,7 @@ export default function Comentarios() {
       </div>
 
       <button className="comentario__button" onClick={handleSeeMore}>
-        {startIndex + 4 < comentarios.length ? "Ver mais" : "Voltar ao início"}
+        {startIndex + 6 < comentarios.length ? "Ver mais" : "Voltar ao início"}
       </button>
     </div>
   );
