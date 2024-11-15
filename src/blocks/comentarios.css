@@ -43,7 +43,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
-  gap: 0 30px;
+  gap: 120px 30px;
 }
 
 .comentario-card {
@@ -125,7 +125,7 @@
   color: #870202;
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1920px) {
+@media screen and (max-width:1280px) {
   
   .comentarios-list {
     grid-template-columns: repeat(3, 1fr);

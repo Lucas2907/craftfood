@@ -71,7 +71,7 @@
 .navigation__btn:hover {
   transform: scale(1.1);
 }
-/* Estilos básicos do modal */
+
 .modal-overlay {
   position: fixed;
   top: 0;

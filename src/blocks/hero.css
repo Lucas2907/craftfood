@@ -9,6 +9,7 @@
   width: 100%;
   max-width: 592px;
   transition: ease-in-out 0.5s;
+  margin-right: 30px;
 }
 
 .hero__img:hover {
@@ -53,13 +54,13 @@
   line-height: 1.6;
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1920px) {
+@media screen and (max-width:1280px) {
 
   .hero__img {
     width: 100%;
     max-width: 400px;
     height: 400px;
-    padding-right: 30px;
+    margin-right: 20px;
   }
 
 }
