@@ -138,12 +138,8 @@
   color: #870202;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width:1280px) {
   
-=======
 @media screen and (min-width: 1025px) {
->>>>>>> 44993e6e32272d6c82cf296c8021b778147c522e
   .comentarios-list {
     grid-template-columns: repeat(3, 1fr);
   }
