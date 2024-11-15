@@ -43,13 +43,10 @@
 .comentarios-list {
   margin: 100px 0 30px;
   display: grid;
-<<<<<<< HEAD
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
   gap: 120px 30px;
-=======
   gap: 30px;
->>>>>>> 44993e6e32272d6c82cf296c8021b778147c522e
 }
 
 .comentario-card {
