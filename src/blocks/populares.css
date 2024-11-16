@@ -161,23 +161,28 @@
   .populares__cards_item {
     width: 70%;
     max-width: 400px;
+    gap: 5px;
   }
 
   .populares__cards_item_title {
     position: relative;
     top: -50px;
     font-size: 2rem;
+    margin: 0;
   }
 
   .populares__cards_item_text {
     width: 90%;
     position: relative;
     top: -50px;
+    font-size: 1.3rem;
+    margin: 0;
   }
 
   .populares__cards_item_preco {
     position: relative;
     top: -50px;
     padding-bottom: 0;
+    font-size: 2.5rem;
   }
 }
