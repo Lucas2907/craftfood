@@ -79,15 +79,14 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
-
-  .populares__cards_item_title{
+  .populares__cards_item_title {
     font-size: 2.5rem;
     position: relative;
     top: -50px;
     margin: 0;
   }
 
-  .populares__cards_item_text{
+  .populares__cards_item_text {
     width: 90%;
     position: relative;
     top: -30px;
@@ -106,19 +105,18 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   .populares {
     width: 90%;
   }
 
-  .populares__cards_item_title{
+  .populares__cards_item_title {
     font-size: 2.5rem;
     position: relative;
     top: -50px;
     margin: 0;
   }
 
-  .populares__cards_item_text{
+  .populares__cards_item_text {
     width: 90%;
     position: relative;
     top: -30px;
@@ -142,7 +140,6 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -150,11 +147,10 @@
     width: 80%;
   }
 
-  .populares__cards{
+  .populares__cards {
     grid-template-columns: repeat(1, 1fr);
     gap: 100px;
     justify-items: center;
-    
   }
 
   .populares__title {
@@ -167,21 +163,21 @@
     max-width: 400px;
   }
 
-  .populares__cards_item_title{
+  .populares__cards_item_title {
     position: relative;
     top: -50px;
+    font-size: 2rem;
   }
 
-  .populares__cards_item_text{
+  .populares__cards_item_text {
     width: 90%;
     position: relative;
     top: -50px;
   }
 
-  .populares__cards_item_preco{
+  .populares__cards_item_preco {
     position: relative;
     top: -50px;
     padding-bottom: 0;
   }
-  
 }
