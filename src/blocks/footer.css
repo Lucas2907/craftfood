@@ -1,5 +1,6 @@
 .footer {
   width: 70%;
+  max-width: 1440px;
   font-family: "Koh Santepheap", sans-serif;
   margin: 100px 0 40px;
 }
@@ -74,4 +75,52 @@
   opacity: 90%;
   color: #fff;
   border-radius: 200px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .footer {
+    width: 90%;
+  }
+
+  .footer__list {
+    justify-items: center;
+  }
+
+  .footer__info__title {
+    text-align: center;
+  }
+
+  .footer__info_text_title {
+    font-size: 1.6rem;
+  }
+
+  .footer__info {
+    text-align: center;
+  }
+
+  .footer__info_text {
+    font-size: 1.2rem;
+  }
+
+  .footer__info__title {
+    margin-bottom: 10px;
+  }
+
+  .footer__infos {
+    max-width: 76px;
+  }
+
+  .footer__image_logo {
+    width: 70%;
+  }
+
+  .footer__social_img {
+    width: 70%;
+  }
 }

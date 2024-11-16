@@ -15,7 +15,7 @@ export default function Navigation() {
   return (
     <>
       <nav className="navigation">
-        <Link href={"#"}>
+        <Link className="navigation__link__image" href={"#"}>
           <img
             src="./logo.svg"
             alt="logotipo"
@@ -25,13 +25,19 @@ export default function Navigation() {
         </Link>
         <ul className="navigation__menu">
           <li className="navigation__menu_item">
-            <Link href={"#"}>Inicio</Link>
+            <Link className="navigation__menu_text" href={"#"}>
+              Inicio
+            </Link>
           </li>
           <li className="navigation__menu_item">
-            <Link href={"#"}>Sobre Nós</Link>
+            <Link className="navigation__menu_text" href={"#"}>
+              Sobre Nós
+            </Link>
           </li>
           <li className="navigation__menu_item">
-            <Link href={"#"}>Populares</Link>
+            <Link className="navigation__menu_text" href={"#"}>
+              Populares
+            </Link>
           </li>
         </ul>
         <Link href="#" className="navigation__btn" onClick={handleReserveClick}>

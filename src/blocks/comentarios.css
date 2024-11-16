@@ -1,6 +1,6 @@
 .comentario {
-  width: 90%;
-  max-width: 1200px;
+  width: 70%;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@
 
 .comentario__title {
   max-width: 100%;
-  margin: 0 0 52px;
   font-size: 3.2rem;
   font-weight: 400;
   line-height: 1.2;
@@ -27,7 +26,8 @@
   background-color: #ff0000;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
 }
 
 .comentario__button:hover {
@@ -41,18 +41,16 @@
 }
 
 .comentarios-list {
-  margin: 100px 0 30px;
+  margin: 200px 0 30px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto;
   gap: 120px 30px;
-  gap: 30px;
 }
 
 .comentario-card {
   width: 100%;
   max-width: 300px;
-  height: auto;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -79,7 +77,6 @@
 .comentario__name {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  margin: 0 0 10px;
   font-size: 2.5rem;
   line-height: 1.2;
   position: relative;
@@ -89,6 +86,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 150px;
+  text-align: center;
 }
 
 .comentario__text {
@@ -100,9 +98,10 @@
   max-width: 300px;
   overflow-wrap: break-word;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 92px;
 }
 
 .comentario__stars {
@@ -121,7 +120,8 @@
   font-size: 2rem;
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -135,38 +135,47 @@
   color: #870202;
 }
 
-  
-@media screen and (min-width: 1025px) {
-  .comentarios-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
   .comentarios-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .comentario {
+    width: 90%;
+  }
+
   .comentarios-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .comentario {
+    width: 90%;
   }
 
-  .comentario__title {
-    font-size: 2.8rem;
-  }
-
-  .comentario__button {
-    font-size: 1.8rem;
-    padding: 15px;
+  .comentarios-list{
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 140px;
   }
 
   .comentario-card {
-    max-width: 100%;
+    width: 80%;
+    height: 100%;
+  }
+
+  .comentario__name {
+    margin: 0;
   }
 
   .comentario__text {
-    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .comentario__button{
+    margin-top: 40px;
   }
 }

@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-between;
   width: 70%;
-  margin: 32px auto 89px;
-  margin-top: 38px;
+  max-width: 1440px;
+  margin: 38px auto 89px;
   font-family: "Poppins", sans-serif;
   align-items: center;
   color: #232323;
+  
 }
 
 .navigation__image {
@@ -26,13 +27,12 @@
   height: 30px;
 }
 
-
 .navigation__menu_item {
   display: flex;
   align-items: center;
 }
 
-.navigation__menu_item a {
+.navigation__menu_text {
   text-decoration: none;
   color: #232323;
   font-size: 2rem;
@@ -42,13 +42,11 @@
   display: flex;
   align-items: center;
   transition: ease-in-out 0.1s;
-  
 }
 
-.navigation__menu_item a:hover{
+.navigation__menu_text:hover {
   color: #ff0000;
   transform: scale(1.1);
-  
 }
 
 .navigation__btn {
@@ -136,4 +134,76 @@
 
 .modal-footer button:hover {
   background-color: #ec3030;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+
+  .navigation__image {
+    max-width: 130px;
+  }
+
+  .navigation__menu_text {
+    font-size: 1.8rem;
+  }
+
+  .navigation__btn{
+    max-width: 170px;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .navigation {
+    width: 90%;
+  }
+
+  .navigation__btn:hover {
+    transform: initial;
+  }
+
+  .navigation__menu{
+    gap: 40px;
+  }
+
+  .navigation__menu_text {
+    font-size: 1.7rem;
+  }
+
+  .navigation__menu_text:hover {
+    color: initial;
+    transform: initial;
+  }
+
+  .navigation__btn{
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .navigation{
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    align-items: space-between;
+  }
+
+  .navigation__link__image {
+    text-align: center;
+  }
+
+  .navigation__image {
+    width:100%;
+  }
+
+  .navigation__menu{
+  }
+  
+  .navigation__menu_text{
+    font-size: 1.7rem;
+  }
+
+  .navigation__btn {
+    width: 100%;
+  }
 }

@@ -29,7 +29,7 @@ export default function Footer() {
         <ul className="footer__infos">
           <li className="footer__info__title">
             <Link href="#" className="footer__info_text_title">
-              Informações
+              Info
             </Link>
           </li>
           <li className="footer__info">

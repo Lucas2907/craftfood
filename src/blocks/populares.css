@@ -1,5 +1,6 @@
 .populares {
   width: 70%;
+  max-width: 1440px;
   font-family: "Koh Santepheap", sans-serif;
   font-weight: 400;
   color: #232323;
@@ -36,7 +37,7 @@
 
 .populares__cards_title_img {
   position: relative;
-  width: 100%;
+  width: 80%;
   max-width: 300px;
   top: -80px;
   transition: ease-in-out 0.3s;
@@ -47,7 +48,7 @@
 }
 
 .populares__cards_item_title {
-  width: 100%;
+  width: 70%;
   max-width: 299px;
   margin: 0 0 24px;
   font-size: 3.2rem;
@@ -77,12 +78,110 @@
   line-height: 1.26;
 }
 
-@media screen and (max-width: 1280px) {
-  .populares__cards_title_img {
-    max-width: 230px;
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+
+  .populares__cards_item_title{
+    font-size: 2.5rem;
+    position: relative;
+    top: -50px;
+    margin: 0;
   }
 
-  .populares__cards_item_title {
-    font-size: 2.9rem;
+  .populares__cards_item_text{
+    width: 90%;
+    position: relative;
+    top: -30px;
+    margin: 0 0 10px 0;
   }
+
+  .populares__cards_title_img {
+    width: 70%;
+  }
+
+  .populares__cards_item_preco {
+    padding: 0;
+    position: relative;
+    top: -30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .populares {
+    width: 90%;
+  }
+
+  .populares__cards_item_title{
+    font-size: 2.5rem;
+    position: relative;
+    top: -50px;
+    margin: 0;
+  }
+
+  .populares__cards_item_text{
+    width: 90%;
+    position: relative;
+    top: -30px;
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+  }
+
+  .populares__cards_title_img {
+    width: 70%;
+  }
+
+  .populares__cards_title_img:hover {
+    transform: initial;
+  }
+
+  .populares__cards_item_preco {
+    padding: 0;
+    position: relative;
+    top: -30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .populares {
+    width: 80%;
+  }
+
+  .populares__cards{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 100px;
+    justify-items: center;
+    
+  }
+
+  .populares__title {
+    font-size: 3rem;
+    margin-bottom: 100px;
+  }
+
+  .populares__cards_item {
+    width: 70%;
+    max-width: 400px;
+  }
+
+  .populares__cards_item_title{
+    position: relative;
+    top: -50px;
+  }
+
+  .populares__cards_item_text{
+    width: 90%;
+    position: relative;
+    top: -50px;
+  }
+
+  .populares__cards_item_preco{
+    position: relative;
+    top: -50px;
+    padding-bottom: 0;
+  }
+  
 }

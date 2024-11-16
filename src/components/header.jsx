@@ -3,6 +3,12 @@ export default function Header() {
     <header className="header">
       <div className="container">
         <h1 className="header__title">Comida Oriental</h1>
+        <img
+        className="header__image__mobile"
+        src="./sushi__header.png"
+        crossOrigin="anonymous"
+        alt="sushi feito poelos melhores do mundo"
+      />
         <h2 className="header__subtitle">
           A culinária Japonesa é bastante equilibrada, sendo muito rica em
           peixes (ômega 3), vegetais, massas e ingredientes frescos.
